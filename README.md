@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+WELCOME TO RECORD LABEL CURRATION ASSISTANT
+
+A small application to help you curate your physical music collection around your favorite labels. 
+
+Why was this app created? I have been around fans of physical music media for many years now and often find they, as opposed to following the work of musicians, will follow the output of record labels. 
+
+I created this app as a way for collectors to keep better track of their collections by organizing them by label and providing the user a clean UI to catalogue their collection. 
+
+Here is how the App is set up. 
+
+File Structure:
+
+The app is sectioned off into relevant folders which are explained below.
+
+REDUX - Housing the reducers and actions
+PAGES - Housing sub-folders for each section of the APP, these section are as follows:
+  SIGN IN
+  DASHBOARD
+  NAVIGATION
+  SEARCH
+UTILS - Housing all the exports required on many pages to give functionalilty to the app. These include but are not limited to:
+  DATADIVINER - A function named after the piece of electronic music by the New Zealand duo Pitch Black. This small function       handles the API requests by taking the url as a parameter and returning an array with the API's data.
+  API ENDPOINTS - a file the exports all the relevant API endpoints. The API in use is the Discogs API. 
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
