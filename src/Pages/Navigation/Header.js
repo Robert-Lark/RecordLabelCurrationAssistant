@@ -4,7 +4,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 //Utils
-import { DataCheker } from '../../Utils/DataCheker';
+import { DataChecker } from '../../Utils/DataChecker';
 
 //React Router
 import {Link} from "react-router-dom";
@@ -15,6 +15,7 @@ import {faRecordVinyl} from "@fortawesome/free-solid-svg-icons";
 import {faMusic} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faDragon} from "@fortawesome/free-solid-svg-icons";
+import { labelAction } from '../../Redux/Actions/LabelsAction';
 
 
 
@@ -22,6 +23,28 @@ import {faDragon} from "@fortawesome/free-solid-svg-icons";
 
 function Header(props) {
 const dispatch = useDispatch();
+
+// the following two functions handle checking if data exists in teh reducer already 
+// and if the user is signed in or not. 
+
+const loadData = () => {
+    if (DataChecker) {
+        console.log("hit dataChecker")
+      return DataChecker
+    } else {
+      dispatch(labelAction());
+    }
+  };
+
+  const searchHandler = () => {
+    // if the user is not signed in run the all data
+    //fetcher, otherwise this will have been run when the user logged in.
+    // if (!currentUser) {
+    //   dispatch(loadReleasesSearch());
+    // }
+
+    // dispatch(navVisibility());
+  };
 
 
 
@@ -38,17 +61,14 @@ const dispatch = useDispatch();
             <p>Label</p>
           </span>
         </Link>
-        {/* <span onClick={() => dispatch(navSelectorDispatch("artist"))}>
-          <FontAwesomeIcon className="fai" icon={faUserAlt}></FontAwesomeIcon>
-          <p>Artist</p>
-        </span> */}
         <Link to={"/search"}>
           <span onClick={searchHandler}>
             <FontAwesomeIcon className="fai" icon={faMusic}></FontAwesomeIcon>
             <p>Search</p>
           </span>
         </Link>
-        {currentUser ? (
+        {/* TODO Once the backend and auth is built unccoment this out */}
+        {/* {currentUser ? (
           <Link to={"/dashboard"}>
             <span onClick={() => dispatch(navVisibility())}>
               <FontAwesomeIcon
@@ -58,7 +78,7 @@ const dispatch = useDispatch();
               <p>Dashboard</p>
             </span>
           </Link>
-        ) : (
+        ) : ( */}
           <Link to={"/login"}>
             <span>
               <FontAwesomeIcon
@@ -68,7 +88,7 @@ const dispatch = useDispatch();
               <p>Sign In</p>
             </span>
           </Link>
-        )}
+        {/* )} */}
       </nav>
     </div>
         </div>

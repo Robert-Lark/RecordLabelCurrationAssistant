@@ -5,7 +5,7 @@
 //HOOKS
 import {useSelector} from "react-redux";
 
-export function DataCheker() {
+export function DataChecker() {
     const data = useSelector((state) => state);
     return data
 }
