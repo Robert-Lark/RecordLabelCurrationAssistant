@@ -14,13 +14,18 @@ The app is sectioned off into relevant folders which are explained below.
 
 REDUX - Housing the reducers and actions
 PAGES - Housing sub-folders for each section of the APP, these section are as follows:
+<br>
   SIGN IN
+  <br>
   DASHBOARD
+  <br>
   NAVIGATION
+  <br>
   SEARCH
+  <br>
 UTILS - Housing all the exports required on many pages to give functionalilty to the app. These include but are not limited to:
-  DATADIVINER - A function named after the piece of electronic music by the New Zealand duo Pitch Black. This small function       handles the API requests by taking the url as a parameter and returning an array with the API's data.
-  API ENDPOINTS - a file the exports all the relevant API endpoints. The API in use is the Discogs API. 
+  <br>DATADIVINER - A function named after the piece of electronic music by the New Zealand duo Pitch Black. This small function       handles the API requests by taking the url as a parameter and returning an array with the API's data.
+<br>  API ENDPOINTS - a file the exports all the relevant API endpoints. The API in use is the Discogs API. 
 
 
 
